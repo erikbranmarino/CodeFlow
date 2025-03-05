@@ -1,0 +1,34 @@
+Project Summary for Automation of Parliamentary Speech Downloads
+Goal: Develop a Python script using Selenium WebDriver to automate the download of parliamentary speeches from the Portuguese Parliament website.
+
+Website URL: https://www.parlamento.pt/DAR/Paginas/DAR1Serie.aspx
+
+Key Requirements:
+
+Dynamic Interaction: The script must interact with dynamic content managed by JavaScript, specifically dropdown menus for selecting legislatures and sessions.
+Robust Download Mechanism: Automate the retrieval of PDF files for each selected legislature and session, handling the downloads in a way that respects the site's dynamic content loading (i.e., content that loads without URL changes).
+Error Handling: Implement error handling to manage timeouts, element availability, and other potential interruptions to ensure the script runs reliably.
+File Organization: Automatically save the downloaded PDFs in an organized structure by legislature and session within a specified directory.
+Adaptability and Maintenance: Ensure the script can be easily updated in response to changes on the website’s structure or functionality, maintaining its effectiveness over time.
+Technical Stack:
+
+Language: Python
+Libraries: Selenium for web browser automation
+Tools: Chrome WebDriver for interfacing with Google Chrome
+Execution Environment: The script should be executable in a virtual environment where Python and Selenium are set up, using paths and configurations that allow for scheduled, automated runs.
+
+Output: The files should be saved in a structured directory, categorized by the legislature and session, to facilitate easy archival and retrieval.
+
+There's no directory. Create a new folder on the local machine for storing all the files in the desktop: /Users/erikbranmarino/Desktop/
+I have a Mac.
+Directory Existence: Before trying to move downloaded files, ensure that the target directories exist. You're already doing this with os.makedirs(target_directory, exist_ok=True), which is great. Make sure the paths you are using (/Users/erikbranmarino/Desktop/{legislature_text}/{session_text}) are correctly formatted and that there are no special characters or slashes that might be misinterpreted by the file system.
+
+Download Wait Time: After clicking the download link for a PDF, your script waits for 5 seconds before continuing. This might not be enough time for the download to complete, especially if the file is large or the network is slow. Consider implementing a more robust way to wait for the download to finish. This could involve checking the download directory for a new file that has finished downloading before moving to the next download.
+
+File Handling Safety: Use try-except blocks around the file moving operation to catch and handle exceptions, which will prevent the script from crashing and provide you with error messages if something goes wrong.
+
+Error Logging: Since you're catching a broad exception and printing it, make sure the output includes enough information to diagnose the issue. You might want to print str(e) to get the message of the exception if it's not already being shown.
+
+Permissions Issues: Verify that your script has the necessary permissions to create directories and move files on your system. This can sometimes be an issue, especially with directories managed by other applications or if there are restrictions set at the OS level.
+
+Correct Selector Usage: Ensure that the element selectors (IDs and XPaths) used in the script accurately reflect the current structure of the website. Websites can change, and this might break your script if the elements are not found where expected.
