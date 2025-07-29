@@ -1,8 +1,9 @@
 import openai
 import re
+import os
 
-# Set your OpenAI API key (for testing, but store securely in production)
-openai.api_key = "xxx"
+# Set your OpenAI API key from environment variable for security
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def extract_code(response_text):
     """Extract Python code enclosed in triple backticks."""
@@ -33,7 +34,7 @@ def call_gpt4o(prompt):
         return None
 
 def create_prompt(code, error_log, purpose):
-    """Crea un prompt per GPT-4o che richiede solo la correzione del codice."""
+    """Creates a prompt for GPT-4o that requests only the code correction."""
     return f"""
     You are an expert Python developer. The goal of this script is: {purpose}.
 
@@ -49,4 +50,3 @@ def create_prompt(code, error_log, purpose):
     Do not include any explanation, comments, pip install or additional text, just the code itself. 
     JUST THE CODE. NO HEADERS, NOTHING MORE THAN THE CODE. NOT EVEN: "```Python" at the beginning or at the end "```".
     """
-

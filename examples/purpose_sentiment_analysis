@@ -1,0 +1,27 @@
+Task: Sentiment Analysis
+Dataset:
+- amazon_cells_labelled.txt
+- imdb_labelled.txt  
+- yelp_labelled.txt
+
+Requirements:
+1. Fine-tune BERT model for binary classification
+2. Target accuracy: > 90%
+3. Handle multi-language input
+4. Generate performance metrics (precision, recall, F1-score)
+5. Implement cross-validation
+6. Create confusion matrix visualization
+7. Save trained model for future use
+
+Additional Parameters:
+- Batch size: 32
+- Learning rate: 2e-5
+- Max sequence length: 128
+- Training epochs: 4
+- Validation split: 0.2
+
+Output Requirements:
+- Training logs with loss progression
+- Evaluation metrics on test set
+- Model saved in .pkl or .pt format
+- Performance visualization plots

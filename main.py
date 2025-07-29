@@ -3,21 +3,21 @@ from iterative_fix import iterative_fix
 
 
 def read_purpose(file_path):
-    """Legge il contenuto del file purpose e lo restituisce come stringa."""
+    """Reads the content of the purpose file and returns it as a string."""
     with open(file_path, 'r') as file:
         return file.read().strip()
 
 
 def main():
-    purpose_file_path = 'purpose'  # Percorso del file "purpose"
+    purpose_file_path = 'purpose'  # Path to the "purpose" file
 
-    # Leggere lo scopo dal file "purpose"
+    # Read the purpose from the "purpose" file
     purpose = read_purpose(purpose_file_path)
 
-    # Percorso del file di codice da correggere
+    # Path to the code file to be fixed
     file_path = 'script.py'
 
-    # Eseguire l'iterazione con il purpose letto
+    # Execute the iteration with the read purpose
     iterative_fix(file_path, purpose)
 
 
