@@ -121,7 +121,7 @@ The system successfully automated:
 - Political discourse analysis
 - Cultural trend identification
 
-## 🔧 Example Purpose Files
+## 🔧 Example Purpose File
 
 ### Sentiment Analysis
 ```text
@@ -134,16 +134,6 @@ Requirements:
 4. Target F1-score: > 0.90
 ```
 
-### Web Scraping
-```text
-Task: Web Scraping
-Website: https://example.com/articles
-Requirements:
-1. Extract article titles and content
-2. Handle pagination automatically
-3. Save to structured CSV format
-4. Implement rate limiting
-```
 
 ## ⚠️ Limitations
 
